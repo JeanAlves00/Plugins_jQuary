@@ -265,14 +265,18 @@
                     },
                 },
                 messages : {
-                    nome: 'Por-favor insira seu nome'
+                    nome: 'Por-favor insira seu nome',
+                    email: 'Por favor insira um email valido',
+                    telefone: 'Insira seu telefone corretamente'
                 },
                 submitHandler: function(form) {
                     console.log(form)
-                }
+                },
                 invalidHandler: function(evento, validador) {
-                    let camposIncorretos = validador.numberOfInvalidos();
-                    console.log()
+                    let camposIncorretos = validador.numberOfInvalids();
+                    if (camposIncorretos) {
+                        alert(`Existem ${camposIncorretos} campos incorretos`)
+                    }
                 }
             })
         });
