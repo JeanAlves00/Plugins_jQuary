@@ -180,7 +180,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="contato">
         <div class="container">
             <h2>Entre em contato</h2>
             <form>
@@ -198,11 +198,11 @@
                 </div>
                 <div class="form-campo">
                     <label for="jogo-interesse">Jogo de interesse:</label>
-                    <input type="text" id="jogo-interesse">
+                    <input type="text" id="jogo-interesse" name="jogoInteresse">
                 </div>
                 <div class="form-campo">
                     <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem"></textarea>
+                    <textarea id="mensagem" name="mensagem"></textarea>
                 </div>
                 <button type="submit">Enviar</button>
             </form>
@@ -239,47 +239,6 @@
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/messages_pt_BR.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.carrosel-imagens').slick({
-                autoplay: true,
-            });
-
-            $('.menu-hamburger').click(function(){
-                $('nav').slideToggle();
-            })
-
-            $('#telefone').mask('(00) 00000-0000')
-
-            $('form').validate ({
-                rules: {
-                    nome: {
-                        required: true
-                    },
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    telefone: {
-                        required: true
-                    },
-                },
-                messages : {
-                    nome: 'Por-favor insira seu nome',
-                    email: 'Por favor insira um email valido',
-                    telefone: 'Insira seu telefone corretamente'
-                },
-                submitHandler: function(form) {
-                    console.log(form)
-                },
-                invalidHandler: function(evento, validador) {
-                    let camposIncorretos = validador.numberOfInvalids();
-                    if (camposIncorretos) {
-                        alert(`Existem ${camposIncorretos} campos incorretos`)
-                    }
-                }
-            })
-        });
-    </script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
